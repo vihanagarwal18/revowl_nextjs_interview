@@ -10,7 +10,6 @@ export default function Home(){
     return (
         <main>
             <Login />
-
             <h1>Username :{username}</h1>
             {isModerator && <h1> This User is a moderator and this line wont be displayed for non mod</h1>}
         </main>
