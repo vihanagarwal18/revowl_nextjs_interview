@@ -30,7 +30,7 @@ export const auth=createSlice({
         },
         logIn:(state,action:PayloadAction<string>) =>{
             return {
-                value:{
+                value:{ //these are the value for the state when we log in
                     isAuth:true,
                     username:action.payload,
                     uid: "fajdskfava",

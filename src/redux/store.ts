@@ -3,7 +3,6 @@ import authReducer from "./features/auth-slice";
 import { TypedUseSelectorHook,useSelector } from 'react-redux';
 export const store=configureStore({
     reducer:{ //is a function that takes in action and previous state of application and make changes to this state and return value to new state
-
         authReducer,
     },
 });
