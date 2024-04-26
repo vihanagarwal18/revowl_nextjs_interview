@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 
 export default function productdetails({
+    
     params,
 }:{
     params: {productid:string};
