@@ -1,8 +1,13 @@
-import React from 'react';
+"use client"
+import React,{useState} from 'react';
 import styles from './main.module.css';
 import './style.css'; // Ensure the CSS path is correct
 
 const Page = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
     <div className="text-gray-600 font-body">
       <div className='grid md:grid-cols-3'>
@@ -13,13 +18,13 @@ const Page = () => {
                 {/* <a href="/" className='text-green-500 sm:text-red-500 lg:text-blue-500'>Food Ninja</a> */}
                 <a href="/" className='hover:text-gray-800'>Food Ninja</a>
               </h1>
-              <div className='px-4 cursor-pointer md:hidden' id="burger">
+              <div className='px-4 cursor-pointer md:hidden' onClick={toggleMenu}>
                 <svg className="w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
               </div>
             </div>
-            <ul className='text-sm mt-6 hidden md:block' id="menu" >
+            <ul className={`text-sm mt-6 ${isMenuOpen ? 'block' : 'hidden'} md:block`}>
               <li className="text-gray-800 font-bold py-1">
                 <a href="#" className='px-4 flex justify-end border-r-4 border-primary'>
                   <span>Home</span>
@@ -51,8 +56,8 @@ const Page = () => {
 
         <main className='px-16 py-6 bg-gray-100 md:col-span-2'>
           <div className='flex justify-center md:justify-end'>
-            <a href="#" className='button text-primary border-primary md:border-2 hover:bg-primary hover:text-white'>Log in</a>
-            <a href="#" className='button text-primary ml-2 border-primary md:border-2 hover:bg-primary hover:text-white'>Sign up</a>
+            <a href="#" className='button text-primary border-primary md:border-2 hover:bg-primary hover:text-white transition ease-out duration-500'>Log in</a>
+            <a href="#" className='button text-primary ml-2 border-primary md:border-2 hover:bg-primary hover:text-white transition ease-out duration-500'>Sign up</a>
           </div>
 
           {/* <div className='flex item-center justigy-center'>
@@ -112,6 +117,48 @@ const Page = () => {
                     <span>25 mins</span>
                   </div>
               </div>
+              <div className='card hover:shadow-lg'>
+                  <img src="img/stew.jpg" alt="stew" className='w-full h-32 sm:h-48 object-cover'/>
+                  <div className='m-4'>
+                    <span className='font-bold '>5 Bean Chili Stew</span>
+                    {/* block level element make it go in next line */}
+                    <span className='block text-gray-500 text-sm'>Recipe by Mario</span> 
+                  </div>
+                  <div className='badge'>
+                    <svg className="w-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                    <span>25 mins</span>
+                  </div>
+              </div>
+              <div className='card hover:shadow-lg'>
+                  <img src="img/noodles.jpeg" alt="noodles" className='w-full h-32 sm:h-48 object-cover'/>
+                  <div className='m-4'>
+                    <span className='font-bold '>Veg Noodles</span>
+                    {/* block level element make it go in next line */}
+                    <span className='block text-gray-500 text-sm'>Recipe by Mario</span> 
+                  </div>
+                  <div className='badge'>
+                    <svg className="w-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                    <span>25 mins</span>
+                  </div>
+              </div>
+              <div className='card hover:shadow-lg'>
+                  <img src="img/curry.jpeg" alt="curry" className='w-full h-32 sm:h-48 object-cover'/>
+                  <div className='m-4'>
+                    <span className='font-bold '>Tofu Curry</span>
+                    {/* block level element make it go in next line */}
+                    <span className='block text-gray-500 text-sm'>Recipe by Mario</span> 
+                  </div>
+                  <div className='badge'>
+                    <svg className="w-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                    <span>25 mins</span>
+                  </div>
+              </div>
             </div>
             
           </div>
@@ -124,7 +171,7 @@ const Page = () => {
           </section>
 
           <div className='flex justify-center'>
-            <div className='button bg-secondary-100 text-secondary-200 hover:shadow-inner'>Load more</div>
+            <div className='button bg-secondary-100 text-secondary-200 hover:shadow-inner transform hover:scale-125 hover:bg-opacity50 transition ease-out duration-300'>Load more</div>
           </div>
         </main>
       </div> 
