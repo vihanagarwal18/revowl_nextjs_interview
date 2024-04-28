@@ -18,22 +18,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header
+        {/* <header
         style={{
           backgroundColor:"lightblue",
           padding:"lrem",
         }}>
           <p>Header</p>
-        </header>
+        </header> */}
           <ReduxProvider>{children}</ReduxProvider>
-        <footer 
+        {/* <footer 
         style={{
           backgroundColor:"ghostwhite",
           color: "red",
           padding:"lrem",
         }}>
           <p> footer</p>
-        </footer>
+        </footer> */}
         </body>
     </html>
   );

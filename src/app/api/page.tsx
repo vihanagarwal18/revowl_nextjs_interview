@@ -16,6 +16,16 @@ interface NewsApiResponse {
     articles: Article[];
 }
 
+const AppBar = styled.header`
+  background-color: #333; // Dark background similar to card
+  color: #fff; // White text
+  padding: 10px 20px;
+  font-size: 24px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius:10px;
+`;
+
 const Card = styled.div`
     display: flex;
     flex-direction: row;
@@ -24,7 +34,7 @@ const Card = styled.div`
     border: none;
     margin: 10px;
     padding: 30px;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     align-items: center; // Align items vertically
 `;
@@ -120,6 +130,7 @@ export default function Fetch() {
 
     return (
         <div>
+            <AppBar>News</AppBar>
             {data && data.articles.map((article, index) => (
                 <NewsCard key={index} article={article} />
             ))}

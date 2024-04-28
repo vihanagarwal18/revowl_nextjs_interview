@@ -10,6 +10,10 @@ export default function Home(){
       <Link href="/product">Click here to view product Page</Link>
       <br></br>
       <Link href="/api">CLick here to watch News Page</Link>
+      <br></br>
+      <Link href="/recipe">CLick here to see recipe page</Link>
+      <br></br>
+      <Link href="/card">CLick here to see sports person page</Link>
       </>
   );
 }
