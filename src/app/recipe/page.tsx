@@ -20,12 +20,18 @@ const Page = () => {
           <a href="#" className='text-primary ml-2'>Sign up</a>
         </div>
 
+        {/* <div className='flex item-center justigy-center'>
+            <div className='bg-red-500 h-4 w-6'></div>
+            <div className='bg-blue-500 h-8 w-6'></div>
+            <div className='bg-green-500 h-12 w-6'></div>
+        </div> */}
+
         <header >
           <h2 className="text-gray-800 text-mammoth font-semibold">Recipes</h2>
           <h3 className="text-2xl font-semibold">For Ninjas</h3>
         </header>
 
-        <section>
+        <div>
           <h4 className="font-bold mt-12 pb-2 border-b border-gray-400">Latest Recipes</h4>
           <div className='mt-8'>
              {/* cards go here */}
@@ -38,7 +44,7 @@ const Page = () => {
             </div>
           </div>
           
-        </section>
+        </div>
 
         <section>
           <h4 className="font-bold mt-12 pb-2 border-b border-gray-400">Most Popular</h4>
@@ -47,8 +53,8 @@ const Page = () => {
           </div>
         </section>
 
-        <div>
-          <button>Load more</button>
+        <div className='flex'>
+          <div className='bg-gray-100 text-gray-300'>Load more</div>
         </div>
       </main>
     </div>
