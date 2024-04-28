@@ -1,0 +1,33 @@
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+    gap: 30px; /* space between cards */
+}
+
+.card {
+    border: 5px solid white; /* thicker border for desktop */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card img {
+    width: 100%; /* adjust image size as needed */
+    height: auto;
+}
+
+.card h3 {
+    margin-top: 10px;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 600px) {
+    .card-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 column for mobile */
+    }
+
+.card {
+        border: 3px solid white; /* thinner border for mobile */
+    }
+}
